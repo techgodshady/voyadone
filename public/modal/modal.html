@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Modal Box</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./modal.css" />
+
+    <!-- Fontawesome CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <button class="show-modal">Show Modal</button>
+    <span class="overlay"></span>
+
+    <div class="modal-box">
+      <h2>Submitted!</h2>
+      <h3>Please wait, your request is being processed</h3>
+
+      <div class="buttons">
+        <button class="close-btn">okay</button>
+        
+      </div>
+    </div>
+
+    <script>
+      const overlay = document.querySelector(".overlay"),
+        showBtn = document.querySelector(".show-modal"),
+        closeBtn = document.querySelector(".close-btn"),
+        modalBox = document.querySelector(".modal-box");
+
+      showBtn.addEventListener("click", () => {
+        modalBox.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      overlay.addEventListener("click", () => {
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modalBox.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Add event listener for the Enter key
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && modalBox.classList.contains("active")) {
+          closeBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>

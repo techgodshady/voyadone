@@ -1,0 +1,9 @@
+const novice_plan = "plan Novice Plan - 30 days | 0.54% daily Profit | Minimum Deposit : $5,000"
+
+const professional_plan = "Professional Plan - 30 days | 0.79% daily Profit | Minimum Deposit : $12,000"
+
+const expert_plan = "Expert Plan - 30 days | 1.20% daily Profit | Minimum Deposit : $25,000"
+
+const gold_plan = "Gold Plan - 30 days | 1.5% daily Profit | Minimum Deposit : $50,000"
+
+const platinum_plan = "Platinum Plan - 30 days | 1.9% daily Profit | Minimum Deposit : $100,000"

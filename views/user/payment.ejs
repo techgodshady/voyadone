@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Voya Wealth Management | User Dashboard</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="/Build/assets/css/app.min.css">
+  <link rel="stylesheet" href="/Build/assets/bundles/jqvmap/dist/jqvmap.min.css">
+  <link rel="stylesheet" href="/Build/assets/bundles/weather-icon/css/weather-icons.min.css">
+  <link rel="stylesheet" href="/Build/assets/bundles/weather-icon/css/weather-icons-wind.min.css">
+  <link rel="stylesheet" href="/Build/assets/bundles/summernote/summernote-bs4.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="/Build/assets/css/style.css">
+  <link rel="stylesheet" href="/Build/assets/css/components.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="/Build/assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='/Build/assets/img/favicon.png' />
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <div class="form-inline me-auto">
+
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-bs-toggle="sidebar" class="nav-link nav-link-lg
+              collapse-btn"> <i data-feather="align-justify"></i></a></li>
+            <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                <i data-feather="maximize"></i>
+              </a></li>
+            <li>
+              <form class="form-inline me-auto">
+                <div class="search-element d-flex">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav navbar-right">
+
+         
+          
+
+
+
+          <li class="dropdown"><a href="#" data-bs-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="/Build/assets/img/profile.png"
+                class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+            <div class="dropdown-menu dropdown-menu-right pullDown">
+              <div class="dropdown-title">Hello  <%= user %></div>
+          <a href="/user/manager" class="dropdown-item has-icon"> <i class="far fa-user"></i>Account Managers</a> 
+          <a href="/user/profile" class="dropdown-item has-icon"> <i class="far fa-user"></i> Manage Profile</a> 
+
+          <a href="/user/password" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+                Manage Password
+              </a> 
+              <!-- 
+      <a href="/user/manager" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>Account Managers </a> -->
+      <a href="/user/referral" class="dropdown-item has-icon"> <i class="fas fa-users"></i>My Referrals </a>
+              <div class="dropdown-divider"></div>
+              <a href="/user/logout" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+
+
+
+
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          
+          <div class="sidebar-user">
+            <div class="sidebar-user-details">  
+              <div class="user-name"><i class="fa fa-home fa-2x" class="bg-primary"></i> Hello! <%= user %></div>
+            </div>
+          </div>
+
+
+
+
+
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+
+
+            <li class="dropdown active">
+              <a href="/user/index" class="nav-link">
+              <i class="fas fa-home"></i><span>Dashboard</span></a>
+            </li>
+
+            <li><a class="nav-link" href="/user/market"><i class="fas fa-sliders-h"></i><span>Market Chart</span></a></li>
+
+
+            <li><a class="nav-link" href="/user/my-investment"><i class="fas fa-hand-holding-usd"></i><span>My Investment</span></a></li>
+
+            <li><a class="nav-link" href="/user/invest"><i class="fas fa-money-bill-alt"></i><span>Invest</span></a></li>
+
+            <li><a class="nav-link" href="/user/reinvest"><i class="fas fa-money-bill"></i><span>Reinvest</span></a></li>
+           
+
+            <li><a class="nav-link" href="/user/transfer"><i class="fas fa-exchange-alt"></i><span>Fund Transfer</span></a></li>
+
+
+            <li><a class="nav-link" href="/user/withdraw"><i class="fas fa-hand-holding-usd"></i><span>Request Withdrawal</span></a></li>
+
+            <li><a class="nav-link" href="/user/profile"><i class="fas fa-user-shield"></i><span>Profile</span></a></li>
+            <li><a class="nav-link" href="/user/history"><i class="fas fa-receipt"></i><span>Transacton History</span></a></li>
+            <li><a class="nav-link" href="/user/logout"><i class="fas fa-power-off"></i><span>Logout</span></a></li>
+
+
+           
+          </ul>
+
+
+
+        </aside>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+        
+          
+            <div class="modal-body" id="pageBody"><div class="col-lg-12 order-lg-2">
+            <!-- Change avatar -->
+            
+
+          
+            <!-- Payment history -->
+            
+            <!-- Attach a new card -->
+            <div class="mt-5 ">
+
+
+  <div class="card" id="depositCard">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-12">
+                    <span class="h6"><%= payment_option %> Deposit</span>
+                  </div>
+                  
+                </div>
+              </div>
+
+            
+
+
+              <div>
+                <ul class="list-group list-group-flush"> 
+                  <li class="list-group-item">
+                    <center>
+                      <img src="<%= QRC %>" alt="BTC QRC CODE" style="width: 250px;">
+                      
+                      
+                    
+                      </center>
+                    <div class="row align-items-center">
+                      <div class="col-sm-3"><small class="h6 text-sm mb-3 mb-sm-0">Deposit Wallet</small></div>
+                      <div class="col-sm-6">
+
+
+
+                          <textarea type="text" class="form-control" id="wallet" style=" "><%= depositWallet %></textarea>  
+                      </div>
+
+<script type="text/javascript">
+  function copyToClipboard() {
+    var textBox = document.getElementById("wallet");
+    textBox.select();
+    document.execCommand("copy");
+}
+</script>
+
+
+                      <div class="col-sm-3 text-sm-right">
+                          <a href="#" class="btn btn-sm btn-info rounded-pill mt-3 mt-sm-0" onclick="copyToClipboard('wallet')">Copy</a>
+                      </div>
+                    </div>
+                  </li> 
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Deposit Status</small></div>
+                      <div class="col-sm-8">
+                        <!-- First card -->
+                        <div class="row mb-3">
+                          <div class="col-12" id="payment_status"><strong>PENDING</strong></div>
+                        </div>
+                        <!-- Second card -->
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Amount to Deposit</small></div>
+                      <div class="col-sm-8">
+                          <strong id="paymentamount"><%= amount %>.00</strong>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-sm-4"><strong class="h6 text-sm mb-3 mb-sm-0 text-danger">Note</strong></div>
+                      <div class="col-sm-8">
+                        <p class="mb-0">
+                          Your deposit will be confirmed as soon as your payment is received.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+
+
+                  <li class="list-group-item">
+                    <div class="row">
+                        <div class="text-right">  
+                          
+<h4>Click on the confirm button after payment has been made</h4>
+<a href="/user/dashboard"><button type="submit" name="submit"  class="btn btn-sm round btn-outline-warning">CONFIRM PAYMENT</button></a><a href="/user/invest"><button type="submit" name="submit"  class="btn btn-sm round btn-outline-danger" style="float: right;"> Cancel</button></a>
+                      </div>
+                    </div>
+                  </li>
+
+
+
+                  
+
+                </ul>
+              </div>
+            </div>
+
+            </div>
+
+
+          </div>
+</div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+
+  <footer class="main-footer">
+        <div class="footer-left">
+          © 2024 Voya Wealth Management. All rights reserved.
+        </div>
+        <div class="footer-right">
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- General JS Scripts -->
+  <script src="/Build/assets/js/app.min.js"></script>
+  <!-- JS Libraies -->
+  <script src="/Build/assets/bundles/echart/echarts.js"></script>
+  <script src="/Build/assets/bundles/chartjs/chart.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="/Build/assets/js/page/index.js"></script>
+  <!-- Template JS File -->
+  <script src="/Build/assets/js/scripts.js"></script>
+  <!-- Custom JS File -->
+  <script src="/Build/assets/js/custom.js"></script>
+</body>
+
+</html>
